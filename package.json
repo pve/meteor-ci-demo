@@ -2,7 +2,7 @@
   "name": "workspace",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
     "test": "meteor test --once --driver-package dispatch:mocha"
   },
   "dependencies": {
