@@ -1,9 +1,10 @@
-sudo: false
+sudo: required
+dist: trusty
 language: node_js
 node_js:
   - "0.10"
   - "4"
-  - latest
+  - "7"
   
 before_install: 
   - curl https://install.meteor.com/ | sh
