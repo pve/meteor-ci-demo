@@ -3,6 +3,7 @@ language: node_js
 node_js:
   - "0.10"
   - "4"
+  - latest
   
 before_install: 
   - curl https://install.meteor.com/ | sh
