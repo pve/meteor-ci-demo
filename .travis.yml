@@ -10,3 +10,8 @@ before_install:
   - curl https://install.meteor.com/ | sh
   - export PATH=$HOME/.meteor:$PATH
   - meteor add dispatch:mocha #practicalmeteor is the browser version, not the ci version
+
+script:
+  - meteor test --once --driver-package dispatch:mocha
+  - TEST_BROWSER_DRIVER=phantomjs meteor test --once --full-app --driver-package dispatch:mocha
+  
