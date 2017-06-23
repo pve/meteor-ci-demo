@@ -2,23 +2,19 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-#  - "0.10"
-  - "4"
-#  - "7"
-  
-before_install: 
-  - curl https://install.meteor.com/ | sh
-  - export PATH=$HOME/.meteor:$PATH
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - heroku
-  - meteor add dispatch:mocha #practicalmeteor is the browser version, not the ci version
-
+- '4'
+before_install:
+- curl https://install.meteor.com/ | sh
+- export PATH=$HOME/.meteor:$PATH
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+- heroku
+- meteor add dispatch:mocha
 script:
-  - meteor test --once --driver-package dispatch:mocha
-  - TEST_BROWSER_DRIVER=phantomjs meteor test --once --full-app --driver-package dispatch:mocha
-#  - meteor build --allow-superuser --directory ../mrt_build --server-only
-  
-after_success:
-  - heroku
-  - heroku git:remote -a pvemeteordemo
-  - git push heroku master
+- meteor test --once --driver-package dispatch:mocha
+- TEST_BROWSER_DRIVER=phantomjs meteor test --once --full-app --driver-package dispatch:mocha
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: HXFdocUa8jmjVq2H7M5YLmxsiJ3NtmYjvaG073u0vzJsCuLkINWNLIs/y0cDtio67eCmUXesB6dly7rcG1DUoewZzHvDcZXQ8tVG62uJnngleYmWO5a2XMQG5EiNCIQQwvhjPJFB6nhJkcPUA4gVHE5XrescN55pCkVZQdpHCcWdeABGrv64Bxi9dNh0dGwBhLyZmMFsMbxj5yjMzFNxoBQDSsHxwYBQrP/e4QMqA3ZY9DQO9+pZcXHjGiZhKtPL81MhoLO8dr9m8uL7V/3BWVs/FeuNfVLkCocikkgVxspKqmyYzFTBM7xERR+EtJZKstDV3fpirUSlzHmpWV9WxS/q8cvin34Bwoilhds9sexm/CVzNvWNjhZPVCSD8tNEk1rPOGtf/28OQA2HP+xJKNNw/aNeI7edPKC+oggaDVuEW6xLPOBYt6g2EiWu90CwL/VBqrHeYLpt3msOIxCE12Du+m6isOasYVKu8uwL3ufuqptg+KpV0mF8EHvius/AS5toUV5SL7UIaDvM6NpSxKihUwNW0abwyn9edviO1xTtNV7y0z32kpDV6JyDFsUogpZuyCJYv5YwMyP0q0/0paTtCbG+6z2/10SLI5GaGc8KPuycVaMxEscNYI21Cqb9TeZ4MaRBmKf7qZCpUiY169kXJi/F4BLzUXL6OdPao8g=
+  app: pvemeteordemo
