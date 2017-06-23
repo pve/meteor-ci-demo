@@ -10,6 +10,7 @@ before_install:
   - curl https://install.meteor.com/ | sh
   - export PATH=$HOME/.meteor:$PATH
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - heroku
   - meteor add dispatch:mocha #practicalmeteor is the browser version, not the ci version
 
 script:
