@@ -2,13 +2,14 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "0.10"
+#  - "0.10"
   - "4"
 #  - "7"
   
 before_install: 
   - curl https://install.meteor.com/ | sh
   - export PATH=$HOME/.meteor:$PATH
+  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
   - meteor add dispatch:mocha #practicalmeteor is the browser version, not the ci version
 
 script:
@@ -17,4 +18,6 @@ script:
 #  - meteor build --allow-superuser --directory ../mrt_build --server-only
   
 after_success:
+  - heroku
+  - heroku git:remote -a pvemeteordemo
   - git push heroku master
