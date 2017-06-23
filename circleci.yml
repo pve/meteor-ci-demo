@@ -1,0 +1,6 @@
+deployment:
+  prod:
+    branch: cicd
+    commands:
+    heroku:
+      appname: peter-bike-heroku-cd
