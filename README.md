@@ -5,7 +5,7 @@ Build platform: Travis. Deployment to Heroku.
 
 This demo app should be live at https://pvemeteordemo.herokuapp.com/
 
-# Instructions for getting started. 
+# Instructions for getting started.
 
 Required to get this working:
 - Travis account (free)
