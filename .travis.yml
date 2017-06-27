@@ -3,6 +3,7 @@ dist: trusty
 language: node_js
 node_js:
 - '4'
+- '7'
 before_install:
 - curl https://install.meteor.com/ | sh
 - export PATH=$HOME/.meteor:$PATH
