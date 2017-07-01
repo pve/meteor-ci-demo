@@ -35,6 +35,8 @@ heroku config:add ROOT_URL=https://example.herokuapp.com
 ```
 Adapt .travis.yml to reflect your application name, and then you are ready to trigger a build by pushing to the master branch.
 
+Travis build status: [![Build Status](https://travis-ci.org/pve/meteor-ci-demo.svg?branch=master)](https://travis-ci.org/pve/meteor-ci-demo)
+
 Instructions to also consult:
 
 https://www.coshx.com/blog/2016/08/19/how-to-deploy-a-meteor-1-4-app-to-heroku/
