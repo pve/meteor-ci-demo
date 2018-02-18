@@ -1,5 +1,9 @@
 sudo: required
 dist: trusty
+notifications:
+  slack:
+    on_success: always # default: always
+    on_failure: always # default: always
 language: node_js
 node_js:
 - '7'

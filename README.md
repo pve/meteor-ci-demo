@@ -9,7 +9,7 @@ This demo app should be live at https://pve-meteor-ci-demo.herokuapp.com/
 
 Required to get this working:
 - Travis account (free)
-- Heroku account (credit card required, but enough free resources)
+- Heroku account (credit card required, but it has enough free resources)
 
 You might also need the Heroku CLI for setting it up.
 ```
