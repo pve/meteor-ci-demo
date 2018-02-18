@@ -17,4 +17,4 @@ deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
   app: 
-    master: pve-meteor-ci-demo
+    master: pve-meteor-ci-demo # deploy the master branch to this Heroku app.
